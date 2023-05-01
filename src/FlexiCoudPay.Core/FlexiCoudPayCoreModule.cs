@@ -8,8 +8,10 @@ using Abp.Zero.Configuration;
 using FlexiCoudPay.Authorization.Roles;
 using FlexiCoudPay.Authorization.Users;
 using FlexiCoudPay.Configuration;
+using FlexiCoudPay.Entities;
 using FlexiCoudPay.Localization;
 using FlexiCoudPay.MultiTenancy;
+using FlexiCoudPay.Respository;
 using FlexiCoudPay.Timing;
 
 namespace FlexiCoudPay
@@ -40,6 +42,10 @@ namespace FlexiCoudPay
             
             Configuration.Settings.SettingEncryptionConfiguration.DefaultPassPhrase = FlexiCoudPayConsts.DefaultPassPhrase;
             SimpleStringCipher.DefaultPassPhrase = FlexiCoudPayConsts.DefaultPassPhrase;
+            //       container.Register(Component.For<IEmployeeRepository>().ImplementedBy<EmployeeRepository>());
+
+
+            //IocManager.Register<IEmployeeRepository>(Abp.Dependency.DependencyLifeStyle.Transient);
         }
 
         public override void Initialize()
